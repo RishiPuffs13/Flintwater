@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Flint Water Crisis</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#eef2f6;
+color:#333;
+scroll-behavior:smooth;
+}
+
+header{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+url("https://upload.wikimedia.org/wikipedia/commons/7/7e/Flint_River_MI.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+header h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:20px;
+width:60%;
+}
+
+nav{
+background:#0a3c5f;
+padding:15px;
+position:sticky;
+top:0;
+z-index:100;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+h2{
+color:#0a3c5f;
+margin-bottom:20px;
+font-size:32px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+margin-bottom:30px;
+}
+
+.timeline{
+border-left:4px solid #0a3c5f;
+padding-left:20px;
+}
+
+.timeline div{
+margin-bottom:30px;
+}
+
+.timeline h3{
+color:#0a3c5f;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.solution{
+background:#dff3ff;
+padding:20px;
+border-radius:10px;
+}
+
+footer{
+background:#0a3c5f;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>The Flint Water Crisis</h1>
+<p>A public health disaster caused by infrastructure failure, chemical corrosion, and government decisions.</p>
+</header>
+
+<nav>
+<a href="#story">What Happened</a>
+<a href="#timeline">Timeline</a>
+<a href="#chemistry">Chemistry</a>
+<a href="#impact">Impact</a>
+<a href="#solutions">Future Solutions</a>
+</nav>
+
+<section id="story" class="fade">
+
+<h2>What Happened</h2>
+
+<div class="card">
+
+<p>
+In 2014 the city of Flint, Michigan switched its drinking water source to the Flint River in order to save money during a financial emergency.
+</p>
+
+<p>
+However, the river water was not treated with corrosion-control chemicals. Flint had thousands of old lead pipes, and the untreated water caused those pipes to corrode.
+</p>
+
+<p>
+As the pipes corroded, toxic lead dissolved into the drinking water of nearly 100,000 residents.
+</p>
+
+</div>
+
+</section>
+
+<section id="timeline" class="fade">
+
+<h2>Timeline of the Crisis</h2>
+
+<div class="timeline">
+
+<div>
+<h3>April 2014</h3>
+<p>Flint switches its water source from Lake Huron to the Flint River.</p>
+</div>
+
+<div>
+<h3>2014–2015</h3>
+<p>Residents complain about brown water, strange smell, and health symptoms.</p>
+</div>
+
+<div>
+<h3>September 2015</h3>
+<p>Researchers confirm dangerous levels of lead in the drinking water.</p>
+</div>
+
+<div>
+<h3>October 2015</h3>
+<p>The city switches back to treated Lake Huron water.</p>
+</div>
+
+<div>
+<h3>2016</h3>
+<p>A federal state of emergency is declared.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="chemistry" class="fade">
+
+<h2>The Chemistry of Lead Contamination</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Pipe Corrosion</h3>
+<p>
+Lead pipes normally develop a protective mineral coating.
+Without corrosion inhibitors, acidic or untreated water dissolves that coating and releases lead ions into water.
+</p>
+</div>
+
+<div class="card">
+<h3>Missing Chemical Protection</h3>
+<p>
+Water systems normally add orthophosphate to prevent corrosion. Flint's treatment plant failed to add this chemical.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="impact" class="fade">
+
+<h2>Impact on Residents</h2>
+
+<div class="card">
+
+<ul>
+<li>Nearly 100,000 residents exposed to contaminated water</li>
+<li>Thousands of children exposed to lead</li>
+<li>Lead poisoning affects brain development and nervous systems</li>
+<li>Outbreak of Legionnaires' disease killed at least 12 people</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="solutions" class="fade">
+
+<h2>How We Can Prevent Future Crises</h2>
+
+<div class="grid">
+
+<div class="solution">
+<h3>Replace Lead Pipes</h3>
+<p>Millions of old lead pipes across the U.S. need replacement.</p>
+</div>
+
+<div class="solution">
+<h3>Better Water Treatment</h3>
+<p>Corrosion-control chemicals must be required and monitored.</p>
+</div>
+
+<div class="solution">
+<h3>Government Transparency</h3>
+<p>Officials must respond to community concerns quickly.</p>
+</div>
+
+<div class="solution">
+<h3>Infrastructure Investment</h3>
+<p>The U.S. needs major investment in water systems.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>Educational Project | Environmental Science | The Flint Water Crisis</p>
+</footer>
+
+<script>
+
+const faders = document.querySelectorAll('.fade');
+
+const appear = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+faders.forEach(fade => {
+appear.observe(fade);
+});
+
+</script>
+
+</body>
+</html>
