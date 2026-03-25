@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flint Water Crisis | ULTIMATE GOD MODE V5 (ENHANCED)</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{overflow:hidden;background:#02030a;color:#fff;cursor:none}
+
+.cursor{width:18px;height:18px;border:2px solid #00c6ff;border-radius:50%;position:fixed;pointer-events:none;transform:translate(-50%,-50%);z-index:2000}
+
+.section{position:absolute;width:100%;height:100%;top:0;left:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px;opacity:0;transform:scale(1.1);transition:all 0.8s ease;pointer-events:none;overflow-y:auto}
+.section.active{opacity:1;transform:scale(1);pointer-events:auto}
+
+h1{font-size:3rem;margin-bottom:20px;text-align:center}
+p{max-width:900px;font-size:1.05rem;line-height:1.8;margin-bottom:15px}
+
+video{position:absolute;width:100%;height:100%;object-fit:cover;z-index:-2;filter:brightness(0.35)}
+.overlay{position:absolute;width:100%;height:100%;background:radial-gradient(circle,transparent,black 90%);z-index:-1}
+
+.nav{position:fixed;top:20px;right:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border-radius:12px;padding:10px;cursor:pointer;z-index:1000}
+.menu{display:none;margin-top:10px}
+.menu div{padding:10px;border-radius:8px;cursor:pointer}
+.menu div:hover{background:rgba(255,255,255,0.2)}
+
+canvas{margin-top:20px;max-width:500px !important;max-height:300px !important;}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="nav" onclick="toggleMenu(event)">☰
+  <div class="menu" id="menu">
+    <div onclick="navigate(0,event)">Home</div>
+    <div onclick="navigate(1,event)">What Happened</div>
+    <div onclick="navigate(2,event)">Water Science</div>
+    <div onclick="navigate(3,event)">Take Action</div>
+    <div onclick="navigate(4,event)">Graphs & Data</div>
+  </div>
+</div>
+
+<div class="section active" id="s0">
+<video autoplay muted loop playsinline id="bg0" src="https://www.w3schools.com/howto/rain.mp4"></video>
+<div class="overlay"></div>
+<h1>Flint Water Crisis</h1>
+<p>The Flint water crisis represents a profound failure in public infrastructure, governance, and scientific oversight. It serves as a modern case study of how systemic neglect and poor decision-making can lead to widespread harm. While water is often assumed to be safe and regulated, Flint demonstrated that this assumption can quickly collapse when safeguards are ignored.</p>
+<p>Beyond the physical contamination, the crisis eroded public trust. Residents were forced to question not only their water but also the institutions responsible for protecting them. This breakdown of trust is one of the most lasting consequences, highlighting the importance of transparency and accountability.</p>
+<p>This experience is not isolated. Across the country, aging infrastructure and budget constraints create similar risks. Flint acts as a warning, showing that without proactive investment and scientific understanding, essential systems can fail catastrophically.</p>
+</div>
+
+<div class="section" id="s1">
+<video autoplay muted loop playsinline id="bg1" src="https://www.w3schools.com/howto/rain.mp4"></video>
+<div class="overlay"></div>
+<h1>What Happened</h1>
+<p>In 2014, Flint officials switched the city's water supply to the Flint River to reduce costs. However, this decision was made without implementing proper corrosion control treatments. The river water interacted with aging pipes, causing them to deteriorate and release lead into the drinking supply.</p>
+<p>Residents immediately noticed issues such as discoloration, strange odors, and poor taste. Despite these warning signs, officials initially dismissed concerns. It took independent testing and community activism to reveal the true extent of the contamination.</p>
+<p>The crisis escalated into a nationwide issue, exposing failures at multiple levels of government. It revealed how economic decisions, when not guided by science and public safety, can have devastating human consequences.</p>
+<p>Ultimately, Flint became a symbol of environmental injustice, as the burden fell disproportionately on a vulnerable population with limited resources to respond.</p>
+</div>
+
+<div class="section" id="s2">
+<video autoplay muted loop playsinline id="bg2" src="https://www.w3schools.com/howto/rain.mp4"></video>
+<div class="overlay"></div>
+<h1>Water Science</h1>
+<p>Water’s chemical properties played a critical role in the Flint crisis. Known as a universal solvent, water can dissolve many substances, including metals like lead. When untreated river water flowed through pipes, it began reacting chemically with the pipe materials.</p>
+<p>This reaction caused corrosion, breaking down protective layers inside the pipes. Without corrosion inhibitors, lead particles entered the water supply. Once dissolved, these particles traveled easily through the system due to water’s polarity and ability to carry ions.</p>
+<p>These processes highlight the importance of water chemistry in public systems. Even small changes in composition can significantly alter how water interacts with infrastructure.</p>
+<p>Understanding these properties is essential for engineers and policymakers to ensure safe water systems and prevent similar crises.</p>
+</div>
+
+<div class="section" id="s3">
+<video autoplay muted loop playsinline id="bg3" src="https://www.w3schools.com/howto/rain.mp4"></video>
+<div class="overlay"></div>
+<h1>Take Action</h1>
+<p>Preventing future crises requires both systemic reform and community engagement. Governments must invest in modern infrastructure and ensure strict enforcement of safety regulations.</p>
+<p>Communities can advocate for transparency and accountability by staying informed and participating in local decision-making processes.</p>
+<p>Education is also key. Understanding how water systems function empowers individuals to recognize potential issues early and respond effectively.</p>
+<p>The Flint crisis reminds us that safe water is not guaranteed—it must be actively protected through science, policy, and civic responsibility.</p>
+</div>
+
+<div class="section" id="s4">
+<video autoplay muted loop playsinline id="bg4" src="https://www.w3schools.com/howto/rain.mp4"></video>
+<div class="overlay"></div>
+<h1>Graphs & Data</h1>
+<canvas id="leadChart"></canvas>
+<canvas id="populationChart"></canvas>
+</div>
+
+<script>
+function toggleMenu(e){if(e)e.stopPropagation();let m=document.getElementById('menu');m.style.display=m.style.display==='block'?'none':'block'}
+
+function navigate(i,e){if(e)e.stopPropagation();document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('s'+i).classList.add('active');document.getElementById('menu').style.display='none';if(i===4&&!window.loaded){initCharts();window.loaded=true}}
+
+function initCharts(){
+new Chart(document.getElementById('leadChart'),{type:'line',data:{labels:['2013','2014','2015','2016','2017'],datasets:[{label:'Lead Levels',data:[5,15,27,20,10]}]},options:{animation:{duration:1500}}});
+new Chart(document.getElementById('populationChart'),{type:'bar',data:{labels:['Children','Adults','Total'],datasets:[{label:'People Affected',data:[9000,90000,99000]}]},options:{animation:{duration:1500}}});
+}
+
+// slow down videos for longer cinematic feel
+document.querySelectorAll('video').forEach(v=>{
+  v.playbackRate = 0.5;
+});
+
+const cursor=document.getElementById('cursor');document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+document.addEventListener('click',()=>{document.getElementById('menu').style.display='none'});
+</script>
+
+</body>
+</html>
